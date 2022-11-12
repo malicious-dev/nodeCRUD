@@ -9,7 +9,7 @@ const port = 8003;
 app.use(cors());
 app.use(express.json());
 
-app.use('/v1/api/', user)
+app.use(user)
 
 
 app.listen(port || process.env.PORT, ()=>{
