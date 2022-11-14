@@ -37,4 +37,16 @@ router.get('/getdata', async (req, res) => {
   }
 })
 
+//get single user 
+
+router.get('/users/:id', async(req, res) => {
+  try{
+    const userdata = await users.findById({_id:req.params.id})
+    console.log(userdata)
+    return res.status(200).json(userdata)
+  }catch(err){
+    return res.json({status: 404, message: err.message});
+  }
+})
+
 module.exports = router;
