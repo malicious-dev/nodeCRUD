@@ -49,4 +49,15 @@ router.get('/users/:id', async(req, res) => {
   }
 })
 
+//delete single user 
+
+router.post('/delete/:id', async(req, res) => {
+  try{
+    const userDelete = await users.findByIdAndDelete({_id:req.params.id});
+    return res.status(200).json("user delete successfully");
+  }catch(err){
+    return res.status(404).json({status: 404, message: err.message})
+  }
+})
+
 module.exports = router;
