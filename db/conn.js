@@ -1,6 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-const url = 'mongodb+srv://malicious:Workingdev@cluster0.dwgizcu.mongodb.net/crudMERN?retryWrites=true&w=majority';
+const url = process.env.DATABASE_URL;
 
 const options = {
   // autoIndex: false, // Don't build indexes

@@ -11,6 +11,10 @@ app.use(express.json());
 
 app.use(user)
 
+app.get('/', (req, res) => {
+  res.send("Welcome!!")
+})
+
 
 app.listen(port || process.env.PORT, ()=>{
   console.log(`server is started at ${port}`);
