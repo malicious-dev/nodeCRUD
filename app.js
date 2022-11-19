@@ -4,7 +4,7 @@ const app = express();
 require('./db/conn');
 const cors = require('cors');
 const user = require('./routes/user')
-const port = 8003;
+var port = process.env.PORT || 5000;;
 
 app.use(cors());
 app.use(express.json());
@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(port || process.env.PORT, ()=>{
+app.listen(port, ()=>{
   console.log(`server is started at ${port}`);
 })
